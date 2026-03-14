@@ -3,18 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Inicio - AlquilaTusVehiculos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h1>AlquilaTusVehiculos</h1>
+
+<header>
+    <h1>AlquilaTusVehiculos</h1>
+    <p>Aplicación de gestión de clientes, vehículos y alquileres</p>
+</header>
 
 <nav>
-    <ul>
-        <li><a th:href="@{/vehiculos}">Gestionar Vehículos</a></li>
-        <li><a th:href="@{/clientes}">Ver Clientes</a></li>
-        <li><a th:href="@{/alquileres}">Ver Alquileres</a></li>
-    </ul>
+    <a th:href="@{/}">Inicio</a>
+    <a th:href="@{/vehiculos}">Vehículos</a>
+    <a th:href="@{/clientes}">Clientes</a>
+    <a th:href="@{/alquileres}">Alquileres</a>
 </nav>
 
-<p>Bienvenido a la aplicación de gestión de alquiler de vehículos.</p>
+<main>
+    <h2>Bienvenido</h2>
+    <p>
+        Desde esta aplicación puedes gestionar los vehículos disponibles,
+        consultar los clientes registrados y revisar los alquileres realizados.
+    </p>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>Vehículos</h3>
+            <p>Gestiona el catálogo de vehículos y realiza el CRUD completo.</p>
+            <a class="button" th:href="@{/vehiculos}">Ver vehículos</a>
+        </div>
+
+        <div class="card">
+            <h3>Clientes</h3>
+            <p>Consulta la información de los clientes registrados en el sistema.</p>
+            <a class="button" th:href="@{/clientes}">Ver clientes</a>
+        </div>
+
+        <div class="card">
+            <h3>Alquileres</h3>
+            <p>Visualiza los alquileres y la relación entre clientes y vehículos.</p>
+            <a class="button" th:href="@{/alquileres}">Ver alquileres</a>
+        </div>
+    </div>
+</main>
+
 </body>
 </html>

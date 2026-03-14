@@ -2,43 +2,64 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Vehículos</title>
+    <title>Vehículos - AlquilaTusVehiculos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h1>Lista de Vehículos</h1>
 
-<a th:href="@{/}">Ir al inicio</a>
-<a th:href="@{/vehiculos/nuevo}">Nuevo vehículo</a>
+<header>
+    <h1>AlquilaTusVehiculos</h1>
+    <p>Gestión de vehículos</p>
+</header>
 
-<table border="1">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Matrícula</th>
-        <th>Marca</th>
-        <th>Modelo</th>
-        <th>Tipo</th>
-        <th>Precio Día</th>
-        <th>Estado</th>
-        <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="vehiculo : ${vehiculos}">
-        <td th:text="${vehiculo.idVehiculo}"></td>
-        <td th:text="${vehiculo.matricula}"></td>
-        <td th:text="${vehiculo.marca}"></td>
-        <td th:text="${vehiculo.modelo}"></td>
-        <td th:text="${vehiculo.tipo}"></td>
-        <td th:text="${vehiculo.precioDia}"></td>
-        <td th:text="${vehiculo.estado}"></td>
-        <td>
-            <a th:href="@{/vehiculos/editar/{id}(id=${vehiculo.idVehiculo})}">Editar</a>
-            <a th:href="@{/vehiculos/eliminar/{id}(id=${vehiculo.idVehiculo})}"
-               onclick="return confirm('¿Seguro que quieres eliminar este vehículo?')">Eliminar</a>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<nav>
+    <a th:href="@{/}">Inicio</a>
+    <a th:href="@{/vehiculos}">Vehículos</a>
+    <a th:href="@{/clientes}">Clientes</a>
+    <a th:href="@{/alquileres}">Alquileres</a>
+</nav>
+
+<main>
+    <h2>Lista de Vehículos</h2>
+
+    <div class="actions">
+        <a class="button" th:href="@{/vehiculos/nuevo}">Nuevo vehículo</a>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Matrícula</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Tipo</th>
+            <th>Precio Día</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="vehiculo : ${vehiculos}">
+            <td th:text="${vehiculo.idVehiculo}"></td>
+            <td th:text="${vehiculo.matricula}"></td>
+            <td th:text="${vehiculo.marca}"></td>
+            <td th:text="${vehiculo.modelo}"></td>
+            <td th:text="${vehiculo.tipo}"></td>
+            <td th:text="${vehiculo.precioDia}"></td>
+            <td th:text="${vehiculo.estado}"></td>
+            <td>
+                <a class="button" th:href="@{/vehiculos/editar/{id}(id=${vehiculo.idVehiculo})}">Editar</a>
+                <a class="button btn-delete"
+                   th:href="@{/vehiculos/eliminar/{id}(id=${vehiculo.idVehiculo})}"
+                   onclick="return confirm('¿Seguro que quieres eliminar este vehículo?')">
+                    Eliminar
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
 </body>
 </html>

@@ -16,7 +16,10 @@ public class AlquilerController {
 
     @GetMapping("/alquileres")
     public String listarAlquileres(Model model) {
-        model.addAttribute("alquileres", alquilerRepository.findAll());
+        var alquileres = alquilerRepository.findAll();
+        System.out.println("ALQUILERES ENCONTRADOS: " + alquileres.size());
+        System.out.println("LISTA ALQUILERES: " + alquileres);
+        model.addAttribute("alquileres", alquileres);
         return "alquileres/lista";
     }
 }

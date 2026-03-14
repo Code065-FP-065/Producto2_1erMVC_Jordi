@@ -2,42 +2,55 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Alquileres</title>
+    <title>Alquileres - AlquilaTusVehiculos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h1>Lista de Alquileres</h1>
 
-<a th:href="@{/}">Ir al inicio</a>
-<a th:href="@{/vehiculos}">Ver vehículos</a>
-<a th:href="@{/clientes}">Ver clientes</a>
+<header>
+    <h1>AlquilaTusVehiculos</h1>
+    <p>Historial de alquileres</p>
+</header>
 
-<table border="1">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Cliente</th>
-        <th>Vehículo</th>
-        <th>Fecha inicio</th>
-        <th>Fecha fin</th>
-        <th>Estado</th>
-        <th>Días</th>
-        <th>Precio/día</th>
-        <th>Total</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="alquiler : ${alquileres}">
-        <td th:text="${alquiler.idAlquiler}"></td>
-        <td th:text="${alquiler.cliente.nombre + ' ' + alquiler.cliente.apellidos}"></td>
-        <td th:text="${alquiler.vehiculo.marca + ' ' + alquiler.vehiculo.modelo}"></td>
-        <td th:text="${alquiler.fechaInicio}"></td>
-        <td th:text="${alquiler.fechaFin}"></td>
-        <td th:text="${alquiler.estado}"></td>
-        <td th:text="${alquiler.dias}"></td>
-        <td th:text="${alquiler.precioDiaAplicado}"></td>
-        <td th:text="${alquiler.total}"></td>
-    </tr>
-    </tbody>
-</table>
+<nav>
+    <a th:href="@{/}">Inicio</a>
+    <a th:href="@{/vehiculos}">Vehículos</a>
+    <a th:href="@{/clientes}">Clientes</a>
+    <a th:href="@{/alquileres}">Alquileres</a>
+</nav>
+
+<main>
+    <h2>Lista de Alquileres</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Vehículo</th>
+            <th>Fecha inicio</th>
+            <th>Fecha fin</th>
+            <th>Estado</th>
+            <th>Días</th>
+            <th>Precio/día</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="alquiler : ${alquileres}">
+            <td th:text="${alquiler.idAlquiler}"></td>
+            <td th:text="${alquiler.cliente.nombre + ' ' + alquiler.cliente.apellidos}"></td>
+            <td th:text="${alquiler.vehiculo.marca + ' ' + alquiler.vehiculo.modelo}"></td>
+            <td th:text="${alquiler.fechaInicio}"></td>
+            <td th:text="${alquiler.fechaFin}"></td>
+            <td th:text="${alquiler.estado}"></td>
+            <td th:text="${alquiler.dias}"></td>
+            <td th:text="${alquiler.precioDiaAplicado}"></td>
+            <td th:text="${alquiler.total}"></td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.alquilatus.vehiculos.web;
+package com.alquilatus.vehiculos.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef1f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(90deg, #1f3c88, #2948a3);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+nav {
+    background-color: #2948a3;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+h2 {
+    color: #1f3c88;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.actions {
+    margin-bottom: 20px;
+}
+
+.button,
+button {
+    display: inline-block;
+    background-color: #1f3c88;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.button:hover,
+button:hover {
+    background-color: #16306f;
+}
+
+.btn-delete {
+    background-color: #c0392b;
+}
+
+.btn-delete:hover {
+    background-color: #962d22;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #565e64;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+table th,
+table td {
+    padding: 14px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #1f3c88;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fbff;
+}
+
+table tr:hover {
+    background-color: #eef4ff;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #1f3c88;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.card {
+    background: #f8fbff;
+    border: 1px solid #dce6f7;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card h3 {
+    color: #1f3c88;
+    margin-top: 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.small-text {
+    font-size: 14px;
+    color: #666;
+}
